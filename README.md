@@ -1,4 +1,4 @@
-# Tomasz Gajda - Portfolio Website
+# Ashrith H N - Portfolio Website
 
 A modern, responsive portfolio website built with HTML5, CSS3, and JavaScript. Features smooth animations, interactive elements, and a mobile-first design approach.
 
