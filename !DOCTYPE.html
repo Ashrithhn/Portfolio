@@ -1125,6 +1125,25 @@
             font-size: 0.9rem;
         }
 
+        .visitor-count {
+            margin-top: 1.5rem;
+            padding: 0.75rem 1.5rem;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary);
+            font-size: 0.9rem;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 0 10px var(--shadow-color);
+        }
+
+        .visitor-count i {
+            font-size: 1rem;
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             .nav-links {
@@ -1888,6 +1907,10 @@
             </div>
             <p class="footer-text">© 2025 Ashrith H N | Designed with ❤️ by Ashrithhn</p>
             <p class="footer-text" style="margin-top: 0.5rem;">Passionate Computer Science Engineer | Building the Future with Code</p>
+            <div class="visitor-count">
+                <i class="fas fa-eye"></i>
+                <span>Visitors: <span id="visitorCount">0</span></span>
+            </div>
         </div>
     </footer>
 
@@ -2208,6 +2231,21 @@
             }
         });
 
+        // Visitor Counter
+        function updateVisitorCount() {
+            let count = localStorage.getItem('visitorCount');
+            if (count === null) {
+                count = 0;
+            } else {
+                count = parseInt(count);
+            }
+            count++;
+            localStorage.setItem('visitorCount', count);
+            document.getElementById('visitorCount').textContent = count.toLocaleString();
+        }
+
+        // Initialize visitor count on page load
+        updateVisitorCount();
 
     </script>
 </body>
