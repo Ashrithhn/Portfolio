@@ -18,10 +18,14 @@ export function initialFX() {
   if (mainEl) {
     mainEl.classList.add("main-active");
   }
+  const isDark = document.documentElement.getAttribute("data-theme") === "dark";
   gsap.to("body", {
-    backgroundColor: "#eae5ec",
+    backgroundColor: isDark ? "#0c0914" : "#eae5ec",
     duration: 0.4,
     delay: 0.2,
+    onComplete: () => {
+      document.body.style.backgroundColor = "";
+    },
   });
 
   const selectors = [".landing-intro h2", ".landing-intro h1"];

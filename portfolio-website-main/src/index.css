@@ -20,8 +20,19 @@
   -moz-user-select: none;
   --accentColor: #7839ee;
   --backgroundColor: #eae5ec;
+  --textColor: #1a1622;
+  --textSecondary: #554d60;
   --vh: 100vh;
   --vh: 100svh;
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+  color: #f3ecf9;
+  --backgroundColor: #0c0914;
+  --accentColor: #aa42ff;
+  --textColor: #f3ecf9;
+  --textSecondary: #a79cb7;
 }
 
 h1,
@@ -204,4 +215,235 @@ body {
   .techstack h2 {
     font-size: 40px;
   }
+}
+
+/* ==========================================================
+   DARK / NIGHT THEME STYLES (Cyberpunk Purple / Obsidian)
+   ========================================================== */
+
+/* Smooth theme transitions */
+body,
+.header,
+.contact-section,
+.about-me p,
+.what-box h2,
+.career-section,
+.work-section {
+  transition: background-color 0.35s ease, color 0.35s ease, border-color 0.35s ease;
+}
+
+/* Landing / Hero */
+[data-theme="dark"] .landing-intro h1 {
+  color: #f3ecf9;
+}
+
+[data-theme="dark"] .landing-intro h2 {
+  color: #e2d9eb;
+}
+
+[data-theme="dark"] .landing-hero-title {
+  color: #f3ecf9;
+}
+
+[data-theme="dark"] .landing-hero-tag {
+  color: #a79cb7;
+}
+
+[data-theme="dark"] .landing-circle1,
+[data-theme="dark"] .landing-circle2 {
+  background-color: #aa42ff;
+  box-shadow: inset -50px 40px 50px rgba(120, 57, 238, 0.45);
+  filter: blur(70px);
+  opacity: 0.65;
+}
+
+/* About Section */
+[data-theme="dark"] .about-me p {
+  color: #f3ecf9;
+}
+
+/* What I Do Section */
+[data-theme="dark"] .what-box h2 {
+  color: #f3ecf9;
+}
+
+[data-theme="dark"] .what-content h3 {
+  color: #f3ecf9;
+}
+
+[data-theme="dark"] .what-content h4 {
+  color: #c2a4ff;
+}
+
+[data-theme="dark"] .what-content p {
+  color: #a79cb7;
+}
+
+[data-theme="dark"] .what-border1,
+[data-theme="dark"] .what-border2 {
+  border-color: rgba(170, 66, 255, 0.28) !important;
+}
+
+[data-theme="dark"] .what-content::before,
+[data-theme="dark"] .what-corner::before,
+[data-theme="dark"] .what-content::after,
+[data-theme="dark"] .what-corner::after {
+  border-color: #aa42ff !important;
+}
+
+[data-theme="dark"] .what-tag span,
+[data-theme="dark"] .what-tag {
+  color: #c2a4ff;
+  border-color: rgba(170, 66, 255, 0.32);
+}
+
+/* Career Section */
+[data-theme="dark"] .career-section h2 {
+  background: linear-gradient(0deg, #aa42ff, #f3ecf9);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+[data-theme="dark"] .career-info h3 {
+  color: #f3ecf9;
+}
+
+[data-theme="dark"] .career-info h4 {
+  color: #c2a4ff;
+}
+
+[data-theme="dark"] .career-info-box p {
+  color: #a79cb7;
+}
+
+/* Work Section */
+[data-theme="dark"] .work-section h2 {
+  color: #f3ecf9;
+}
+
+[data-theme="dark"] .work-box {
+  border-right-color: rgba(170, 66, 255, 0.18);
+}
+
+[data-theme="dark"] .work-flex::before,
+[data-theme="dark"] .work-flex::after {
+  background-color: rgba(170, 66, 255, 0.18);
+}
+
+[data-theme="dark"] .work-info h4 {
+  color: #f3ecf9;
+}
+
+[data-theme="dark"] .work-description {
+  color: #c7bed3;
+}
+
+[data-theme="dark"] .work-tools h5 {
+  color: rgba(243, 236, 249, 0.5);
+}
+
+[data-theme="dark"] .work-tools p {
+  color: #a79cb7;
+}
+
+[data-theme="dark"] .work-link {
+  color: #c2a4ff;
+  border-color: rgba(170, 66, 255, 0.35);
+}
+
+/* TechStack Section */
+[data-theme="dark"] .techstack-video-container::before {
+  background: linear-gradient(to bottom, #0c0914 0%, rgba(170, 66, 255, 0.3) 40%, rgba(13, 10, 20, 0.8) 85%, transparent 100%);
+}
+
+[data-theme="dark"] .techstack-video-container::after {
+  background: linear-gradient(to top, #0c0914 0%, rgba(170, 66, 255, 0.35) 50%, transparent 100%);
+}
+
+[data-theme="dark"] .techstack-new h2,
+[data-theme="dark"] .techstack h2 {
+  color: #f3ecf9;
+}
+
+[data-theme="dark"] .tech-category h3 {
+  color: #e2d9eb;
+}
+
+[data-theme="dark"] .tech-item {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(170, 66, 255, 0.2);
+  color: #f3ecf9;
+}
+
+[data-theme="dark"] .tech-item:hover {
+  background: rgba(170, 66, 255, 0.15);
+  border-color: #aa42ff;
+  box-shadow: 0 0 16px rgba(170, 66, 255, 0.35);
+}
+
+[data-theme="dark"] .tech-item span {
+  color: #f3ecf9;
+}
+
+/* Contact Section & Footer */
+[data-theme="dark"] .contact-section {
+  background-color: #0c0914;
+  color: #f3ecf9;
+}
+
+[data-theme="dark"] .contact-section h3 {
+  color: #f3ecf9;
+}
+
+[data-theme="dark"] .contact-flex h4 {
+  color: #a79cb7;
+}
+
+[data-theme="dark"] .contact-flex p {
+  color: #f3ecf9;
+}
+
+[data-theme="dark"] a.contact-social {
+  color: #f3ecf9;
+  border-bottom-color: rgba(170, 66, 255, 0.35);
+}
+
+[data-theme="dark"] a.contact-social:hover {
+  color: var(--accentColor);
+  border-bottom-color: var(--accentColor);
+}
+
+[data-theme="dark"] .contact-box h2 {
+  color: #f3ecf9;
+}
+
+[data-theme="dark"] .contact-box h5 {
+  color: #a79cb7;
+}
+
+/* Social Icons & Floating Resume button */
+[data-theme="dark"] .social-icons a {
+  color: #f3ecf9;
+}
+
+[data-theme="dark"] .social-icons a:hover {
+  color: var(--accentColor);
+}
+
+[data-theme="dark"] .resume-button {
+  color: #f3ecf9;
+}
+
+[data-theme="dark"] .resume-button:hover {
+  color: var(--accentColor);
+}
+
+/* Scrollbar in Dark Mode */
+[data-theme="dark"] ::-webkit-scrollbar-thumb {
+  background: rgba(170, 66, 255, 0.35);
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb:hover {
+  background: rgba(170, 66, 255, 0.65);
 }

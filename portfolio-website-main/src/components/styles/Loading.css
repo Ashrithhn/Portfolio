@@ -3,7 +3,7 @@
   width: 100vw;
   height: var(--vh);
   /* background-image: linear-gradient(#cbb1ff, #d8c4ff); */
-  background-color: #eae5ec;
+  background-color: var(--backgroundColor, #eae5ec);
   z-index: 999999999;
   display: flex;
   place-items: center;
@@ -68,7 +68,7 @@
   border-radius: 5000px;
   min-height: calc(100vh + 500px);
   box-shadow: none;
-  background-color: #eae5ec;
+  background-color: var(--backgroundColor, #eae5ec);
 }
 .loading-clicked .loading-button {
   overflow: visible;
