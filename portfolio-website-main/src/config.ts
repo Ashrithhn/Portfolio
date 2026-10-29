@@ -2,7 +2,7 @@ export const config = {
     developer: {
         name: "Ashrith",
         fullName: "Ashrith H N",
-        title: "Software Engineer & Tech Enthusiast",
+        title: "CSE Graduate & Tech Enthusiast",
         description: "B.E. in Computer Science & Engineering from Government Engineering College Mosalehosahalli (VTU, CGPA 8.86). Hands-on with web development, Linux systems, SQL databases, and targeting AWS Cloud certifications."
     },
     social: {

@@ -3,7 +3,7 @@
 A modern, high-performance **3D developer portfolio website** built with **React**, **TypeScript**, **Three.js**, **GSAP**, and **WebGL**.
 
 > Live Site: https://ashrithhn.vercel.app/
-> Author: **Ashrith H N** — Software Engineer & Tech Enthusiast (B.E. in CSE, VTU · CGPA 8.86) · CodeNimbus Solutions Front-End Intern · Target AWS Solutions Architect.
+> Author: **Ashrith H N** — CSE Graduate & Tech Enthusiast (B.E. in CSE, VTU · CGPA 8.86) · CodeNimbus Solutions Front-End Intern · Target AWS Solutions Architect.
 
 ---
 

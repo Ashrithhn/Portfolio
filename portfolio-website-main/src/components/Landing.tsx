@@ -23,8 +23,8 @@ const Landing = ({ children }: PropsWithChildren) => {
           </div>
           <div className="landing-info">
             <h3>TECH ENTHUSIAST</h3>
-            <h2 className="landing-hero-title">SOFTWARE</h2>
-            <h2 className="landing-hero-title-accent">ENGINEER</h2>
+            <h2 className="landing-hero-title">CSE</h2>
+            <h2 className="landing-hero-title-accent">GRADUATE</h2>
             <p className="landing-hero-tag">Problem Solver &bull; Cloud &amp; Web Systems</p>
           </div>
           {/* Mobile photo - shows only on mobile when 3D character is hidden */}
