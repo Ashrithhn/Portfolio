@@ -1,6 +1,7 @@
 import { PropsWithChildren } from "react";
 import "./styles/Landing.css";
 import { config } from "../config";
+import { getAssetPath } from "../utils/assetPath";
 
 const Landing = ({ children }: PropsWithChildren) => {
   const nameParts = config.developer.fullName.split(" ");
@@ -29,7 +30,7 @@ const Landing = ({ children }: PropsWithChildren) => {
           {/* Mobile photo - shows only on mobile when 3D character is hidden */}
           <div className="mobile-photo">
             <img
-              src="./images/mypicnbg.png"
+              src={getAssetPath("images/mypicnbg.png")}
               alt={config.developer.fullName}
               loading="eager"
               fetchPriority="high"

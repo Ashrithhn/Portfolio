@@ -125,6 +125,8 @@ const Scene = () => {
             handleResize(renderer, camera, canvasDiv, character)
           );
         }
+      }).catch((err) => {
+        console.error("Failed to load 3D character:", err);
       });
 
       let mouse = { x: 0, y: 0 },

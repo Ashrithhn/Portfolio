@@ -1,3 +1,5 @@
+import { getAssetPath } from "./assetPath";
+
 class RedoxChessEngine {
   private engine: Worker | null = null;
   private onMoveCallback: ((move: string) => void) | null = null;
@@ -9,7 +11,7 @@ class RedoxChessEngine {
 
   async init() {
     return new Promise<void>((resolve) => {
-      this.engine = new Worker('./redoxchess.js');
+      this.engine = new Worker(getAssetPath("redoxchess.js"));
 
       this.engine.onmessage = (event) => {
         const message = event.data;

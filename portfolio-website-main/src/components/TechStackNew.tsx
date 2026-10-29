@@ -1,4 +1,5 @@
 import "./styles/TechStackNew.css";
+import { getAssetPath } from "../utils/assetPath";
 
 interface TechItem {
   name: string;
@@ -63,8 +64,14 @@ const TechStackNew = () => {
           muted
           playsInline
           className="techstack-video"
+          ref={(el) => {
+            if (el) {
+              el.muted = true;
+              el.play().catch(() => {});
+            }
+          }}
         >
-          <source src="./video/video.webm" type="video/webm" />
+          <source src={getAssetPath("video/video.webm")} type="video/webm" />
         </video>
         {/* Dark Overlay */}
         <div className="techstack-overlay"></div>

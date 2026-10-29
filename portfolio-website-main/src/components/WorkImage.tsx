@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { MdArrowOutward } from "react-icons/md";
 import { Link } from "react-router-dom";
+import { getAssetPath } from "../utils/assetPath";
 
 interface Props {
   image: string;
@@ -13,6 +14,7 @@ const WorkImage = (props: Props) => {
   const [isVideo, setIsVideo] = useState(false);
   const [video, setVideo] = useState("");
   const isExternalLink = Boolean(props.link && !props.link.startsWith("/"));
+  const resolvedImage = getAssetPath(props.image);
 
   const handleMouseEnter = async () => {
     if (props.video) {
@@ -40,7 +42,7 @@ const WorkImage = (props: Props) => {
             <div className="work-link">
               <MdArrowOutward />
             </div>
-            <img src={props.image} alt={props.alt} loading="lazy" decoding="async" />
+            <img src={resolvedImage} alt={props.alt} loading="lazy" decoding="async" />
             {isVideo && <video src={video} autoPlay muted playsInline loop></video>}
           </a>
         ) : (
@@ -54,7 +56,7 @@ const WorkImage = (props: Props) => {
             <div className="work-link">
               <MdArrowOutward />
             </div>
-            <img src={props.image} alt={props.alt} loading="lazy" decoding="async" />
+            <img src={resolvedImage} alt={props.alt} loading="lazy" decoding="async" />
             {isVideo && <video src={video} autoPlay muted playsInline loop></video>}
           </Link>
         )
@@ -65,7 +67,7 @@ const WorkImage = (props: Props) => {
           onMouseLeave={() => setIsVideo(false)}
           data-cursor={"disable"}
         >
-          <img src={props.image} alt={props.alt} loading="lazy" decoding="async" />
+          <img src={resolvedImage} alt={props.alt} loading="lazy" decoding="async" />
           {isVideo && <video src={video} autoPlay muted playsInline loop></video>}
         </div>
       )}

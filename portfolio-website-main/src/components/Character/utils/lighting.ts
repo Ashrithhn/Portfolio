@@ -1,6 +1,7 @@
 import * as THREE from "three";
 import { RGBELoader } from "three-stdlib";
 import { gsap } from "gsap";
+import { getAssetPath } from "../../../utils/assetPath";
 
 const setLighting = (scene: THREE.Scene) => {
   const directionalLight = new THREE.DirectionalLight(0xc7a9ff, 0);
@@ -41,7 +42,7 @@ const setLighting = (scene: THREE.Scene) => {
   scene.add(faceGlowLight);
 
   new RGBELoader()
-    .setPath("./models/")
+    .setPath(getAssetPath("models/"))
     .load("char_enviorment.hdr", function (texture) {
       texture.mapping = THREE.EquirectangularReflectionMapping;
       scene.environment = texture;
