@@ -4,7 +4,7 @@ import { config } from "../config";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect } from "react";
-import { getAssetPath } from "../utils/assetPath";
+import { openResumeModal } from "./ResumeModal";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -118,15 +118,14 @@ const Contact = () => {
                 Linkedin <MdArrowOutward />
               </a>
             )}
-            <a
-              href={getAssetPath("Ashrith_H_N_resume.pdf")}
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              type="button"
+              onClick={() => openResumeModal()}
               data-cursor="disable"
-              className="contact-social"
+              className="contact-social contact-resume-btn"
             >
               Resume (PDF) <MdArrowOutward />
-            </a>
+            </button>
             {config.contact.twitter && (
               <a
                 href={config.contact.twitter}

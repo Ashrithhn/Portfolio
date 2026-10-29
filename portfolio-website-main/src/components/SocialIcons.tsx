@@ -10,6 +10,7 @@ import { TbNotes } from "react-icons/tb";
 import { useEffect } from "react";
 import HoverLinks from "./HoverLinks";
 import { config } from "../config";
+import { openResumeModal } from "./ResumeModal";
 
 const SocialIcons = () => {
   useEffect(() => {
@@ -97,18 +98,18 @@ const SocialIcons = () => {
           </span>
         )}
       </div>
-      <a
+      <button
+        type="button"
         className="resume-button"
-        href="/Ashrith_H_N_resume.pdf"
-        target="_blank"
-        rel="noopener noreferrer"
-        download="Ashrith_H_N_resume.pdf"
+        onClick={() => openResumeModal()}
+        aria-label="View Resume"
+        title="View Resume"
       >
         <HoverLinks text="RESUME" />
         <span>
           <TbNotes />
         </span>
-      </a>
+      </button>
     </div>
   );
 };
