@@ -218,6 +218,13 @@
 .loader-title span {
   color: #7839ee;
 }
+[data-theme="dark"] .loading-header,
+[data-theme="dark"] .loader-title {
+  color: #ffffff !important;
+}
+[data-theme="dark"] .loader-title span {
+  color: var(--accentColor, #aa42ff) !important;
+}
 @keyframes blink {
   0% {
     opacity: 0;

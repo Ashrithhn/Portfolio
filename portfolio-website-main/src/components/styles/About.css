@@ -26,10 +26,10 @@
 
 .about-me p {
   font-size: 20px;
-  font-weight: 600;
-  line-height: 26px;
-  letter-spacing: 0.5px;
-  word-spacing: 2px;
+  font-weight: 500;
+  line-height: 32px;
+  letter-spacing: 0.4px;
+  word-spacing: 1.5px;
 }
 
 .about-me .split-word {

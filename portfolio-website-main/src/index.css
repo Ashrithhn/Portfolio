@@ -232,13 +232,25 @@ body,
   transition: background-color 0.35s ease, color 0.35s ease, border-color 0.35s ease;
 }
 
-/* Landing / Hero */
-[data-theme="dark"] .landing-intro h1 {
-  color: #f3ecf9;
+/* Loading Screen */
+[data-theme="dark"] .loading-header,
+[data-theme="dark"] .loader-title {
+  color: #ffffff !important;
 }
 
-[data-theme="dark"] .landing-intro h2 {
-  color: #e2d9eb;
+[data-theme="dark"] .loader-title span {
+  color: var(--accentColor, #aa42ff) !important;
+}
+
+/* Landing / Hero */
+[data-theme="dark"] .landing-intro h1,
+[data-theme="dark"] .landing-intro h1 * {
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .landing-intro h2,
+[data-theme="dark"] .landing-intro h2 * {
+  color: #d8b4fe !important;
 }
 
 [data-theme="dark"] .landing-hero-title {
@@ -279,6 +291,11 @@ body,
   color: #e2d9eb;
 }
 
+[data-theme="dark"] .what-content h5 {
+  color: #c2a4ff !important;
+  opacity: 1 !important;
+}
+
 [data-theme="dark"] .what-border1,
 [data-theme="dark"] .what-border2 {
   border-color: rgba(170, 66, 255, 0.28) !important;
@@ -291,10 +308,10 @@ body,
   border-color: #aa42ff !important;
 }
 
-[data-theme="dark"] .what-tag span,
-[data-theme="dark"] .what-tag {
-  color: #c2a4ff;
-  border-color: rgba(170, 66, 255, 0.32);
+[data-theme="dark"] .what-tags {
+  background-color: rgba(170, 66, 255, 0.15) !important;
+  border-color: rgba(170, 66, 255, 0.35) !important;
+  color: #f3ecf9 !important;
 }
 
 /* Career Section - High Contrast & Instant Clarity for Recruiters */
