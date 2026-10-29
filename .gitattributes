@@ -1,0 +1,2 @@
+*.glb -filter -diff -merge -text
+*.hdr -filter -diff -merge -text

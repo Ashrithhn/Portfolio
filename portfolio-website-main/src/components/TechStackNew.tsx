@@ -64,7 +64,7 @@ const TechStackNew = () => {
           playsInline
           className="techstack-video"
         >
-          <source src="/video/video.webm" type="video/webm" />
+          <source src="./video/video.webm" type="video/webm" />
         </video>
         {/* Dark Overlay */}
         <div className="techstack-overlay"></div>

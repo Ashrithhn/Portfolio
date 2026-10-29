@@ -9,12 +9,12 @@ const setCharacter = (
 ) => {
   const loader = new GLTFLoader();
   const dracoLoader = new DRACOLoader();
-  dracoLoader.setDecoderPath("/draco/");
+  dracoLoader.setDecoderPath("./draco/");
   loader.setDRACOLoader(dracoLoader);
 
   const loadCharacter = () => {
     return new Promise<GLTF | null>((resolve, reject) => {
-      const modelUrl = "/models/mycharacter.glb";
+      const modelUrl = "./models/mycharacter.glb";
 
       loader.load(
         modelUrl,

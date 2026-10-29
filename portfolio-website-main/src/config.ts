@@ -99,7 +99,7 @@ export const config = {
             title: "Buildathon '25 — Phish Shield",
             category: "Hackathon Finalist • CIT Gubbi",
             technologies: "Python, Scikit-learn, NLP, Flask, Machine Learning",
-            image: "/images/buildathon.jpg",
+            image: "./images/buildathon.jpg",
             description: "24-Hour Buildathon Hackathon Finalist project at CIT Gubbi. Machine learning classifier detecting phishing emails and fraudulent links with 98% accuracy and 0.2s processing time.",
             link: "https://github.com/Ashrithhn/phishing-detection-using-ai-ml"
         },
@@ -108,7 +108,7 @@ export const config = {
             title: "Prompt Wars — Jnana Cauvery '25",
             category: "3rd Place Winner • PESCE Mandya",
             technologies: "Prompt Engineering, LLMs, Problem Solving, DSA",
-            image: "/images/prompt wars.jpg",
+            image: "./images/prompt wars.jpg",
             description: "Secured 3rd place in Prompt Wars at Jnana Cauvery '25 (P.E.S. College of Engineering, Mandya), designing advanced LLM prompts and solving algorithmic engineering challenges.",
             link: "https://www.linkedin.com/in/ashrith-h-n-56566721a/"
         },
@@ -117,7 +117,7 @@ export const config = {
             title: "VTU Fest 'Interact 2025'",
             category: "State Technical Quiz • Global Academy of Technology",
             technologies: "Computer Science Fundamentals, Emerging Tech, Teamwork",
-            image: "/images/vtu fest.jpg",
+            image: "./images/vtu fest.jpg",
             description: "Represented Government Engineering College Mosalehosahalli in the prestigious university-level technical quiz competition at Interact 2025 held at Global Academy of Technology, Bengaluru.",
             link: "https://www.linkedin.com/in/ashrith-h-n-56566721a/"
         },
@@ -126,7 +126,7 @@ export const config = {
             title: "TCS TechBytes IT Quiz",
             category: "State-Level IT Quiz • TCS & Board of IT Education",
             technologies: "IT Industry Trends, Technology Concepts, Problem Solving",
-            image: "/images/tcs tech bytes.jpg",
+            image: "./images/tcs tech bytes.jpg",
             description: "Participated in the state-level TCS TechBytes technical quiz, competing against engineering colleges across Karnataka on emerging technology, computer systems, and IT trends.",
             link: "https://www.linkedin.com/in/ashrith-h-n-56566721a/"
         },
@@ -135,7 +135,7 @@ export const config = {
             title: "Cybersecurity Deception System",
             category: "Defensive Security & Intrusion Detection",
             technologies: "Python, Cowrie SSH Honeypot, Grafana, Loki, Ubuntu, Kali Linux",
-            image: "/images/honeypot-cybersecurity.png",
+            image: "./images/honeypot-cybersecurity.png",
             description: "SSH honeypot-based intrusion detection system capturing real attacker activity, visualized with real-time Grafana and Loki dashboards on a virtualized Ubuntu and Kali Linux network.",
             link: "https://github.com/Ashrithhn"
         },
@@ -144,7 +144,7 @@ export const config = {
             title: "GLAD-Cell — Event Management Platform",
             category: "Live College Event Platform • Full-Stack",
             technologies: "React.js, Firebase, Supabase, Vercel",
-            image: "/images/glad-cell.png",
+            image: "./images/glad-cell.png",
             description: "Live college event management platform with barcode/QR attendee check-in, real-time organizer admin dashboard, and Firebase authentication used during live college events.",
             link: "https://glad-cell.vercel.app/"
         },
@@ -153,7 +153,7 @@ export const config = {
             title: "InvitationNation.in — Web Platform",
             category: "Frontend Internship • CodeNimbus Solutions",
             technologies: "React.js, JavaScript, Figma, Git, Responsive CSS",
-            image: "/images/inviatation.jpg",
+            image: "./images/inviatation.jpg",
             description: "Real-world web application built during my Front-End Developer internship at CodeNimbus Solutions Pvt. Ltd., turning Figma wireframes into reusable, responsive React components.",
             link: "https://github.com/Ashrithhn"
         },
@@ -162,7 +162,7 @@ export const config = {
             title: "CodeHere — Online Code Editor",
             category: "Developer Tools & Code Execution",
             technologies: "React.js, Monaco Editor, Tailwind CSS, Compiler APIs",
-            image: "/images/code-editor.jpg",
+            image: "./images/code-editor.jpg",
             description: "Browser-based interactive coding compiler and editor supporting C, C++, Python, and Java execution with real-time syntax highlighting and sandboxed output.",
             link: "https://codehere-compiler.vercel.app/"
         }
