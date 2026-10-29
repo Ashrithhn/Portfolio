@@ -82,7 +82,56 @@ const Navbar = () => {
       lenis?.resize();
     });
 
+    // Auto-hide header while scrolling down, reveal while scrolling up
+    let lastScrollY = typeof window !== "undefined" ? window.scrollY : 0;
+    let ticking = false;
+
+    const updateVisibility = (scrollPos?: number) => {
+      const currentScrollY = Math.max(
+        0,
+        typeof scrollPos === "number" ? scrollPos : window.scrollY
+      );
+      const header = document.querySelector(".header");
+      const navFade = document.querySelector(".nav-fade");
+
+      if (!header) return;
+
+      // Always keep header visible when near the top of the page
+      if (currentScrollY <= 60) {
+        header.classList.remove("header-hidden");
+        navFade?.classList.remove("nav-fade-hidden");
+      } else if (currentScrollY > lastScrollY + 10) {
+        // Scrolling DOWN -> hide header
+        header.classList.add("header-hidden");
+        navFade?.classList.add("nav-fade-hidden");
+      } else if (currentScrollY < lastScrollY - 10) {
+        // Scrolling UP -> show header
+        header.classList.remove("header-hidden");
+        navFade?.classList.remove("nav-fade-hidden");
+      }
+
+      lastScrollY = currentScrollY;
+      ticking = false;
+    };
+
+    const onScroll = () => {
+      if (!ticking) {
+        requestAnimationFrame(() => updateVisibility());
+        ticking = true;
+      }
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+
+    lenis.on("scroll", (e: { scroll: number }) => {
+      if (!ticking) {
+        requestAnimationFrame(() => updateVisibility(e.scroll));
+        ticking = true;
+      }
+    });
+
     return () => {
+      window.removeEventListener("scroll", onScroll);
       lenis?.destroy();
     };
   }, []);
