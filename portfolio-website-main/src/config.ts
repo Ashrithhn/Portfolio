@@ -13,7 +13,7 @@ export const config = {
     },
     about: {
         title: "About Me",
-        description: "Computer Science graduate (VTU · 8.86 CGPA) with hands-on experience building responsive React.js web apps and exploring Linux, SQL, and AWS Cloud systems. Focused on crafting clean, high-performance digital experiences and scalable solutions."
+        description: "B.E. in Computer Science & Engineering from Government Engineering College Mosalehosahalli (VTU · 8.86 CGPA). Completed a Front-End Developer internship at CodeNimbus Solutions working with React.js. Aspiring Software Engineer actively preparing for the AWS Certified Solutions Architect – Associate (SAA-C03) certification."
     },
     experiences: [
         {

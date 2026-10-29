@@ -254,11 +254,15 @@ body,
 }
 
 [data-theme="dark"] .landing-hero-title {
-  color: #f3ecf9;
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .landing-hero-title-accent {
+  color: var(--accentColor, #aa42ff) !important;
 }
 
 [data-theme="dark"] .landing-hero-tag {
-  color: #a79cb7;
+  color: #e5dded !important;
 }
 
 [data-theme="dark"] .landing-circle1,

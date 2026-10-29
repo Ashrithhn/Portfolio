@@ -75,7 +75,7 @@
     margin-bottom: 5px;
   }
 
-  /* Subtitles Container */
+  /* Subtitles Container - Clean left aligned on mobile */
   .landing-info {
     position: relative !important;
     top: auto !important;
@@ -83,27 +83,30 @@
     right: auto !important;
     bottom: auto !important;
     transform: none !important;
-    text-align: center;
+    text-align: left !important;
     margin-top: auto;
     z-index: 10;
     background: transparent;
     padding-bottom: 25px;
+    padding-left: 8px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 4px;
+    align-items: flex-start !important;
+    gap: 2px;
     height: auto !important;
     width: 100% !important;
+    box-sizing: border-box;
     order: 3;
   }
 
   .landing-info h3 {
-    text-align: center;
+    text-align: left !important;
     display: block !important;
     font-size: 13px !important;
-    letter-spacing: 3px !important;
+    letter-spacing: 2.5px !important;
     color: var(--accentColor) !important;
     margin: 0 !important;
+    font-weight: 600 !important;
   }
 
   /* Static positioning for hero title and tag on mobile */
@@ -112,10 +115,10 @@
     display: block;
     width: auto;
     margin: 0 !important;
-    font-size: 26px !important;
+    font-size: 28px !important;
     line-height: 1.15 !important;
     white-space: normal !important;
-    text-align: center;
+    text-align: left !important;
     color: #1a1622;
     font-weight: 700;
   }
@@ -125,10 +128,10 @@
     display: block;
     width: auto;
     margin: 0 !important;
-    font-size: 28px !important;
+    font-size: 30px !important;
     line-height: 1.15 !important;
     white-space: normal !important;
-    text-align: center;
+    text-align: left !important;
     color: var(--accentColor);
     font-weight: 800;
   }
@@ -138,11 +141,11 @@
     display: block;
     width: auto;
     margin: 0 !important;
-    margin-top: 4px !important;
-    font-size: 13px !important;
+    margin-top: 6px !important;
+    font-size: 13.5px !important;
     line-height: 1.4 !important;
     white-space: normal !important;
-    text-align: center;
+    text-align: left !important;
     color: rgba(26, 22, 34, 0.85);
     font-weight: 500;
   }
