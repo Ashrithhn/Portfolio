@@ -4,7 +4,6 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect } from "react";
 import { config } from "../config";
-import { lenis } from "./Navbar";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -35,7 +34,7 @@ const Work = () => {
         trigger: ".work-section",
         start: "top top",
         end: `+=${translateX}`,
-        scrub: 0.5,
+        scrub: 1,
         pin: true,
         pinSpacing: true,
         anticipatePin: 1,
@@ -57,7 +56,7 @@ const Work = () => {
     let isResetting = false;
     let autoScrollRaf: number;
     let lastTime = performance.now();
-    const autoScrollSpeed = 4.2; // brisk, engaging auto-slide speed
+    const autoScrollSpeed = 1.3; // gentle smooth sliding
 
     const workSection = document.getElementById("work");
     const onMouseEnter = () => {
@@ -78,21 +77,12 @@ const Work = () => {
       if (st && st.isActive && !isHovered && !isResetting) {
         if (st.progress >= 0.985) {
           isResetting = true;
-          if (lenis) {
-            lenis.scrollTo(st.start, { duration: 1.0 });
-          } else {
-            window.scrollTo({ top: st.start, behavior: "smooth" });
-          }
+          window.scrollTo({ top: st.start, behavior: "smooth" });
           setTimeout(() => {
             isResetting = false;
-          }, 1100);
+          }, 1200);
         } else {
-          const delta = autoScrollSpeed * dt;
-          if (lenis) {
-            lenis.scrollTo(lenis.scroll + delta, { immediate: true });
-          } else {
-            window.scrollBy(0, delta);
-          }
+          window.scrollBy(0, autoScrollSpeed * dt);
         }
       }
 

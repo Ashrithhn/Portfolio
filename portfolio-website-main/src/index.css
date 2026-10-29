@@ -276,7 +276,7 @@ body,
 }
 
 [data-theme="dark"] .what-content p {
-  color: #a79cb7;
+  color: #e2d9eb;
 }
 
 [data-theme="dark"] .what-border1,
@@ -297,24 +297,37 @@ body,
   border-color: rgba(170, 66, 255, 0.32);
 }
 
-/* Career Section */
+/* Career Section - High Contrast & Instant Clarity for Recruiters */
 [data-theme="dark"] .career-section h2 {
-  background: linear-gradient(0deg, #aa42ff, #f3ecf9);
+  background: linear-gradient(0deg, #aa42ff, #ffffff);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-[data-theme="dark"] .career-info h3 {
-  color: #f3ecf9;
+[data-theme="dark"] .career-info-box {
+  opacity: 1 !important;
 }
 
 [data-theme="dark"] .career-info h4 {
-  color: #c2a4ff;
+  color: #ffffff !important;
+  font-weight: 700;
+}
+
+[data-theme="dark"] .career-info h5 {
+  color: #d8b4fe !important;
+  font-weight: 500;
+}
+
+[data-theme="dark"] .career-info h3 {
+  color: #f3ecf9 !important;
+  font-weight: 700;
 }
 
 [data-theme="dark"] .career-info-box p {
-  color: #a79cb7;
+  color: #e5dded !important;
+  font-weight: 400;
+  line-height: 22px;
 }
 
 /* Work Section */
