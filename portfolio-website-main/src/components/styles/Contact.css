@@ -119,32 +119,15 @@ a.contact-social {
   }
 }
 @media only screen and (max-width: 900px) {
-  .contact-section {
-    position: relative;
-    z-index: 10;
-    margin-top: 40px;
-    padding-bottom: 80px;
-    min-height: auto;
-    display: block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-  }
-
   .contact-section h3,
   .contact-box {
     opacity: 1 !important;
     transform: none !important;
-    visibility: visible !important;
-  }
-
-  .contact-container {
-    width: calc(100% - 30px);
-    margin: 0 auto;
   }
 
   .contact-flex {
     flex-direction: column;
-    gap: 35px;
+    gap: 40px;
   }
 
   .contact-flex p {
@@ -152,6 +135,15 @@ a.contact-social {
   }
 
   .contact-flex h4 {
-    margin-top: 15px;
+    margin-top: 20px;
+  }
+
+  .contact-section {
+    margin-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .contact-container {
+    width: calc(100% - 25px);
   }
 }

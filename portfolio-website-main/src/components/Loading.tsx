@@ -127,18 +127,16 @@ export default Loading;
 
 export const setProgress = (setLoading: (value: number) => void) => {
   let percent: number = 0;
-  const isMobile = typeof window !== "undefined" && window.innerWidth <= 768;
 
   let interval = setInterval(() => {
-    const maxTarget = isMobile ? 100 : 90;
-    if (percent < maxTarget) {
-      percent += Math.floor(Math.random() * 6) + 4;
-      if (percent > maxTarget) percent = maxTarget;
+    if (percent < 90) {
+      percent += Math.floor(Math.random() * 8) + 4;
+      if (percent > 90) percent = 90;
       setLoading(percent);
     } else {
       clearInterval(interval);
     }
-  }, isMobile ? 40 : 35);
+  }, 35);
 
   function clear() {
     clearInterval(interval);
