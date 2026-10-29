@@ -12,33 +12,25 @@
   box-shadow: 0px 0px 30px 0px rgb(175, 131, 255);
   mix-blend-mode: difference;
   opacity: 0;
-  transform: scale(0.6);
-  transition: opacity 0.25s ease, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: opacity 0.3s ease, top 0.3s ease-out, left 0.3s ease-out, width 0.3s ease-out,
+    height 0.3s ease-out;
 }
-
-/* Activate X-ray lens ONLY when hovering over the 3D model & computer */
-body.cursor-on-model .cursor-main {
-  opacity: 1 !important;
-  transform: scale(1) !important;
+.cursor-active {
+  opacity: 1;
 }
-
 .cursor-icons {
-  opacity: 1 !important;
-  transform: scale(1) !important;
   top: 10px;
   left: 10px;
   height: calc(var(--cursorH) - 20px);
   transition: all 0.5s ease-out, height 0.5s ease-in-out;
 }
-
 .cursor-disable {
   --size: 0px !important;
   opacity: 0 !important;
 }
-
 @media only screen and (min-width: 600px) {
   .cursor-main {
-    --size: 55px;
+    --size: 45px;
   }
   .cursor-disable {
     --size: 0px !important;
