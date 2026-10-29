@@ -17,9 +17,9 @@ export const getAssetPath = (path: string): string => {
   const cleanPath = path.replace(/^(\.\/|\/)/, "");
 
   if (typeof window !== "undefined") {
-    const pathname = window.location.pathname;
-    // If hosted on GitHub Pages subpath /Portfolio/ or /Portfolio
-    if (pathname.toLowerCase().includes("/portfolio")) {
+    const isGitHubPages = window.location.hostname.includes("github.io");
+    // Only prepend /Portfolio/ if specifically on GitHub Pages subfolder
+    if (isGitHubPages && window.location.pathname.toLowerCase().includes("/portfolio")) {
       return `/Portfolio/${cleanPath}`;
     }
   }

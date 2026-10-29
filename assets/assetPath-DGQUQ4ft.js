@@ -1,1 +1,0 @@
-const t=t=>{if(!t)return"";if(t.startsWith("http://")||t.startsWith("https://")||t.startsWith("data:"))return t;const o=t.replace(/^(\.\/|\/)/,"");if("undefined"!=typeof window){if(window.location.pathname.toLowerCase().includes("/portfolio"))return`/Portfolio/${o}`}return`/${o}`};export{t as g};
