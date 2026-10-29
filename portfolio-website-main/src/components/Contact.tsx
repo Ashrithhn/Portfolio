@@ -4,26 +4,15 @@ import { config } from "../config";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect } from "react";
-import { getAssetPath } from "../utils/assetPath";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Contact = () => {
   useEffect(() => {
-    // On mobile and tablet screens, ensure footer content is immediately visible without waiting for scrollTrigger
-    if (window.innerWidth <= 900) {
-      gsap.set([".contact-section h3", ".contact-box"], {
-        opacity: 1,
-        y: 0,
-        clearProps: "all",
-      });
-      return;
-    }
-
     const contactTimeline = gsap.timeline({
       scrollTrigger: {
         trigger: ".contact-section",
-        start: "top 95%",
+        start: "top 80%",
         end: "bottom center",
         toggleActions: "play none none none",
       },
@@ -34,7 +23,7 @@ const Contact = () => {
       ".contact-section h3",
       {
         opacity: 0,
-        y: 40,
+        y: 50,
       },
       {
         opacity: 1,
@@ -49,7 +38,7 @@ const Contact = () => {
       ".contact-box",
       {
         opacity: 0,
-        y: 40,
+        y: 50,
       },
       {
         opacity: 1,
@@ -119,7 +108,7 @@ const Contact = () => {
               </a>
             )}
             <a
-              href={getAssetPath("Ashrith_H_N_resume.pdf")}
+              href="/Ashrith_H_N_resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
               data-cursor="disable"

@@ -14,38 +14,8 @@ export function setCharTimeline(
       trigger: ".landing-section",
       start: "top top",
       end: "bottom top",
-      scrub: 0.6,
+      scrub: true,
       invalidateOnRefresh: true,
-      onLeaveBack: () => {
-        gsap.to(".landing-container", {
-          opacity: 1,
-          y: "0%",
-          duration: 0.25,
-          overwrite: "auto",
-        });
-        gsap.to(".character-model", {
-          x: "0%",
-          y: "0%",
-          opacity: 1,
-          duration: 0.25,
-          overwrite: "auto",
-        });
-        if (character) {
-          gsap.to(character.rotation, {
-            y: 0,
-            x: 0,
-            duration: 0.25,
-            overwrite: "auto",
-          });
-        }
-        gsap.to(camera.position, {
-          x: 0,
-          y: 13.1,
-          z: 24.7,
-          duration: 0.25,
-          overwrite: "auto",
-        });
-      },
     },
   });
   const tl2 = gsap.timeline({
@@ -53,7 +23,7 @@ export function setCharTimeline(
       trigger: ".about-section",
       start: "center 55%",
       end: "bottom top",
-      scrub: 0.6,
+      scrub: true,
       invalidateOnRefresh: true,
     },
   });
@@ -62,15 +32,8 @@ export function setCharTimeline(
       trigger: ".whatIDO",
       start: "top top",
       end: "bottom top",
-      scrub: 0.6,
+      scrub: true,
       invalidateOnRefresh: true,
-      onLeaveBack: () => {
-        gsap.to(".character-model", {
-          y: "0%",
-          duration: 0.25,
-          overwrite: "auto",
-        });
-      },
     },
   });
   let screenLight: any, monitor: any;
