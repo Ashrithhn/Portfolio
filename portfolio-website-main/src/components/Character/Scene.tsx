@@ -34,7 +34,7 @@ const Scene = () => {
         powerPreference: "high-performance",
       });
       renderer.setSize(container.width, container.height);
-      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, window.innerWidth <= 768 ? 1.5 : 2));
       renderer.toneMapping = THREE.ACESFilmicToneMapping;
       renderer.toneMappingExposure = 1.1;
       canvasDiv.current.appendChild(renderer.domElement);
@@ -165,6 +165,10 @@ const Scene = () => {
       }
       const animate = () => {
         requestAnimationFrame(animate);
+        // On mobile, skip rendering Three.js frames when scrolled past the landing section to conserve GPU & battery
+        if (window.innerWidth <= 768 && window.scrollY > window.innerHeight * 1.2) {
+          return;
+        }
         if (headBone && isIntroFinished && hasUserMoved) {
           handleHeadRotation(
             headBone,

@@ -13,25 +13,60 @@ const Navbar = () => {
   useEffect(() => {
     // Initialize Lenis smooth scroll
     lenis = new Lenis({
-      duration: 1.7,
+      duration: 1.1,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       orientation: "vertical",
       gestureOrientation: "vertical",
       smoothWheel: true,
-      wheelMultiplier: 1.7,
-      touchMultiplier: 2,
+      wheelMultiplier: 1.1,
+      touchMultiplier: 1.5,
       infinite: false,
     });
 
     // Start paused
     lenis.stop();
 
-    // Handle smooth scroll animation frame
-    function raf(time: number) {
-      lenis?.raf(time);
-      requestAnimationFrame(raf);
-    }
-    requestAnimationFrame(raf);
+    // Synchronize Lenis with GSAP ScrollTrigger
+    lenis.on("scroll", ScrollTrigger.update);
+
+    const updateLenisTicker = (time: number) => {
+      lenis?.raf(time * 1000);
+    };
+    gsap.ticker.add(updateLenisTicker);
+    gsap.ticker.lagSmoothing(0);
+
+    // Sudden scroll recovery failsafe: restore landing elements when near top
+    const restoreLandingAtTop = () => {
+      const scrollY = window.scrollY || document.documentElement.scrollTop;
+      if (scrollY < 80) {
+        const landing = document.querySelector(".landing-container") as HTMLElement;
+        if (landing && parseFloat(window.getComputedStyle(landing).opacity) < 0.95) {
+          gsap.to(".landing-container", {
+            opacity: 1,
+            y: "0%",
+            duration: 0.2,
+            overwrite: "auto",
+          });
+        }
+        const charModel = document.querySelector(".character-model") as HTMLElement;
+        if (
+          charModel &&
+          (charModel.style.transform.includes("-100%") ||
+            parseFloat(window.getComputedStyle(charModel).opacity) < 0.9)
+        ) {
+          gsap.to(".character-model", {
+            x: window.innerWidth > 1024 ? "0%" : "-50%",
+            y: "0%",
+            opacity: 1,
+            duration: 0.2,
+            overwrite: "auto",
+          });
+        }
+      }
+    };
+
+    window.addEventListener("scroll", restoreLandingAtTop, { passive: true });
+    lenis.on("scroll", restoreLandingAtTop);
 
     // Handle navigation links
     let links = document.querySelectorAll(".header ul a");
@@ -61,7 +96,12 @@ const Navbar = () => {
     });
 
     return () => {
+      window.removeEventListener("scroll", restoreLandingAtTop);
+      lenis?.off("scroll", ScrollTrigger.update);
+      lenis?.off("scroll", restoreLandingAtTop);
+      gsap.ticker.remove(updateLenisTicker);
       lenis?.destroy();
+      lenis = null;
     };
   }, []);
   return (
