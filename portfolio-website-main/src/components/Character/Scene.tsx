@@ -133,10 +133,41 @@ const Scene = () => {
         interpolation = { x: 0.1, y: 0.2 };
       let hasUserMoved = false;
 
+      const raycaster = new THREE.Raycaster();
+      const mouseVec = new THREE.Vector2(-10, -10);
+      let isOverModel = false;
+
+      const checkModelHover = () => {
+        if (!character || window.innerWidth <= 768 || window.scrollY > 400) {
+          if (isOverModel) {
+            isOverModel = false;
+            document.body.classList.remove("cursor-on-model");
+          }
+          return;
+        }
+
+        raycaster.setFromCamera(mouseVec, camera);
+        const intersects = raycaster.intersectObjects(character.children, true);
+        const hovering = intersects.length > 0;
+
+        if (hovering !== isOverModel) {
+          isOverModel = hovering;
+          if (hovering) {
+            document.body.classList.add("cursor-on-model");
+          } else {
+            document.body.classList.remove("cursor-on-model");
+          }
+        }
+      };
+
       const onMouseMove = (event: MouseEvent) => {
         hasUserMoved = true;
+        mouseVec.x = (event.clientX / window.innerWidth) * 2 - 1;
+        mouseVec.y = -(event.clientY / window.innerHeight) * 2 + 1;
         handleMouseMove(event, (x, y) => (mouse = { x, y }));
+        checkModelHover();
       };
+      window.addEventListener("scroll", checkModelHover, { passive: true });
       let debounce: number | undefined;
       const onTouchStart = (event: TouchEvent) => {
         hasUserMoved = true;
@@ -186,6 +217,8 @@ const Scene = () => {
       };
       animate();
       return () => {
+        document.body.classList.remove("cursor-on-model");
+        window.removeEventListener("scroll", checkModelHover);
         clearTimeout(debounce);
         scene.clear();
         renderer.dispose();
