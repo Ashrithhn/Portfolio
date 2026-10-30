@@ -1,5 +1,7 @@
 import "./styles/Career.css";
 import { config } from "../config";
+import { getAssetPath } from "../utils/assetPath";
+import { FaLaptopCode } from "react-icons/fa6";
 
 const getDisplayYear = (period: string) => {
   if (period.includes("Present")) return "NOW";
@@ -25,14 +27,37 @@ const Career = () => {
           <div className="career-timeline">
             <div className="career-dot"></div>
           </div>
-          {config.experiences.map((exp, index) => (
+          {config.experiences.map((exp: any, index) => (
             <div key={index} className="career-info-box">
               <div className="career-info-in">
-                <div className="career-role">
-                  <h4>{exp.position}</h4>
-                  <h5>
-                    {exp.company} &bull; <span style={{ fontSize: "14px", opacity: 0.85, fontWeight: 400 }}>{exp.period}</span>
-                  </h5>
+                <div className="career-role-wrap">
+                  {exp.logo ? (
+                    <div
+                      className="career-logo-box"
+                      style={{ backgroundColor: exp.logoBg || "#ffffff" }}
+                      title={exp.company}
+                    >
+                      <img
+                        src={getAssetPath(exp.logo)}
+                        alt={`${exp.company} logo`}
+                        className="career-logo-img"
+                        loading="lazy"
+                      />
+                    </div>
+                  ) : (
+                    <div className="career-logo-box career-logo-icon" title={exp.company}>
+                      <FaLaptopCode />
+                    </div>
+                  )}
+                  <div className="career-role">
+                    <h4>{exp.position}</h4>
+                    <h5>
+                      {exp.company} &bull;{" "}
+                      <span style={{ fontSize: "14px", opacity: 0.85, fontWeight: 400 }}>
+                        {exp.period}
+                      </span>
+                    </h5>
+                  </div>
                 </div>
                 <h3>{getDisplayYear(exp.period)}</h3>
               </div>

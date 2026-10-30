@@ -41,7 +41,9 @@ export const config = {
                 "Converted Figma wireframes into responsive, production-ready code",
                 "Collaborated with senior engineers using Git branch workflows and regular reviews"
             ],
-            technologies: ["React.js", "JavaScript", "Figma", "Git", "GitHub", "CSS3"]
+            technologies: ["React.js", "JavaScript", "Figma", "Git", "GitHub", "CSS3"],
+            logo: "./images/code-nimbus-logo.jpg",
+            logoBg: "#ffffff"
         },
         {
             position: "Magazine Committee Coordinator",
@@ -53,7 +55,9 @@ export const config = {
                 "Coordinated editorial content, student submissions, and layout design",
                 "Managed communication across departments for the 'Arohana' annual magazine"
             ],
-            technologies: ["Content Management", "Editorial Layout", "Coordination"]
+            technologies: ["Content Management", "Editorial Layout", "Coordination"],
+            logo: "./images/vtu-logo.png",
+            logoBg: "#ffffff"
         },
         {
             position: "CSE Department Lab Coordinator",
@@ -66,19 +70,23 @@ export const config = {
                 "Installed and configured Linux and Windows OS across lab systems",
                 "Handled basic LAN network configuration and hardware troubleshooting"
             ],
-            technologies: ["Linux", "Ubuntu", "Kali Linux", "VMware / VirtualBox", "OS Installation", "Networking Basics"]
+            technologies: ["Linux", "Ubuntu", "Kali Linux", "VMware / VirtualBox", "OS Installation", "Networking Basics"],
+            logo: "./images/glad-logo.jpeg",
+            logoBg: "#050308"
         },
         {
-            position: "Active Member — Kannada Sangha",
+            position: "Active Member — Cultural Committee",
             company: "Government Engineering College, Mosalehosahalli",
             period: "2022 - 2026",
             location: "Hassan, Karnataka",
-            description: "Active member of Kannada Sangha, organizing and volunteering for cultural fests, literary programs, college annual day events, and community activities.",
+            description: "Active member of Cultural Committee, organizing and volunteering for cultural fests, literary programs, college annual day events, and community activities.",
             responsibilities: [
                 "Volunteered and organized cultural fests and college events",
                 "Coordinated student activities and community celebrations"
             ],
-            technologies: ["Event Management", "Team Coordination", "Public Relations"]
+            technologies: ["Event Management", "Team Coordination", "Public Relations"],
+            logo: "./images/vtu-logo.png",
+            logoBg: "#ffffff"
         },
         {
             position: "B.E. in Computer Science & Engineering",
@@ -90,7 +98,9 @@ export const config = {
                 "Maintained 8.86 / 10.0 aggregate CGPA throughout engineering",
                 "Completed core coursework in DSA, Operating Systems, DBMS, Networks, and Web Tech"
             ],
-            technologies: ["Data Structures", "Operating Systems", "DBMS", "Computer Networks", "Software Engineering"]
+            technologies: ["Data Structures", "Operating Systems", "DBMS", "Computer Networks", "Software Engineering"],
+            logo: "./images/vtu-logo.png",
+            logoBg: "#ffffff"
         }
     ],
     projects: [
